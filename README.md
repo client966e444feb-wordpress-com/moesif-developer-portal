@@ -158,7 +158,7 @@ After the request has been sent, you should see a `200 OK` response as well as a
 
 Ensure that you have set the **Authentication Mode** to **Authentication Token** within your API configuration for your endpoint. Under **Authentication Token > Auth Key Header Name**, type **Authorization**.
 
-## Running the Developer Portal
+## Configuring the Developer Portal
 
 ### Download the Source Code
 
@@ -248,7 +248,7 @@ For the `KONG_URL`, If you’re running a local instance of Kong, by default thi
 
 #### AWS
 
-TODO
+##### Documentation Coming Soon
 
 #### Tyk
 
@@ -479,7 +479,7 @@ Once your products and prices are created, it's time to begin to integrate Strip
 
 This will bring up the Stripe configuration screen to walk you through the integration. From this screen, you can get all of the info needed to plug Stripe into Moesif. Each step for configuration is covered within the modal. The below sections go into more detail if required.
 
-#### ADd the Moesif Webhook to Stripe
+#### Add the Moesif Webhook to Stripe
 
 The first step in the integration is to add the Moesif webhook into the Moesif configuration for Stripe. Adding this allows Stripe to send subscription updates to Moesif.
 
