@@ -284,6 +284,11 @@ app.post("/register/stripe/:checkout_session_id", function (req, res) {
             stripe_customer_id,
             stripe_subscription_id,
           });
+        } else if (apimProvider === "CUSTOM" {
+          // warning here for you to customize the
+          // Provisioning for your API gateway.
+          // this is your hook
+
         }
       }
       // we still pass on result.
