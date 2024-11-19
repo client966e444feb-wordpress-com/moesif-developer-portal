@@ -1,13 +1,12 @@
 
 
 function provisionCustomerForCustomApiGateway() {
-  // for you to finish to provision customer
-
+  // Provision customer for custom API Gateway
 }
 
 function createAPIKeyForCustomerForCustomApiGateway() {
-  // for you to finish to genreate key.
-  return 'GENERATEYOUR_KEY using createAPIKeyForCustomerForCustomApiGateway';
+  // Create API key for customer for custom API Gateway
+  return 'GENERATED_KEY';
 }
 
 

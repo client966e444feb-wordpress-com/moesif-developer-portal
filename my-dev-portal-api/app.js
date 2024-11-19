@@ -29,6 +29,11 @@ const {
   createKonnectApiKeyForCustomer,
 } = require("./services/kongAPIMServices");
 
+const {
+  provisionCustomerForCustomApiGateway,
+  createAPIKeyForCustomerForCustomApiGateway
+} = require("./services/customAPIMServices");
+
 const app = express();
 app.use(express.static(path.join(__dirname)));
 const port = 3030;
@@ -284,11 +289,11 @@ app.post("/register/stripe/:checkout_session_id", function (req, res) {
             stripe_customer_id,
             stripe_subscription_id,
           });
-        } else if (apimProvider === "CUSTOM" {
-          // warning here for you to customize the
-          // Provisioning for your API gateway.
-          // this is your hook
-
+        } else if (apimProvider === "Custom") {
+          // For custom API Management, you can create a customer
+          // in your API Management platform.
+          // Create your custom implementation in the provisionCustomerForCustomApiGateway function
+          // provisionCustomerForCustomApiGateway();
         }
       }
       // we still pass on result.
@@ -420,11 +425,12 @@ app.post("/create-key", jsonParser, async function (req, res) {
 
       // Send the Tyk API key back as the response
       res.status(200).send({ apikey: tykAPIKey });
-    } else if (apimProvider === 'CUSTOM) {
+    } else if (apimProvider === 'Custom') {
+      // Create a custom API key for the customer
+      // Create your custom implementation in the createAPIKeyForCustomerForCustomApiGateway function
       var customAPIKey = createAPIKeyForCustomerForCustomApiGateway();
       res.status(200).send({ apikey: customAPIKey });
     }
-
   } catch (error) {
     console.error("Error creating key:", error);
     res.status(500).json({ message: "Failed to create key" });
