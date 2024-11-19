@@ -328,6 +328,7 @@ app.post("/create-key", jsonParser, async function (req, res) {
     const kongConsumerId = req.body.kongConsumerId;
     var apiKey = "";
 
+
     if (apimProvider === "Kong") {
       // Konnect
       if (
@@ -419,7 +420,11 @@ app.post("/create-key", jsonParser, async function (req, res) {
 
       // Send the Tyk API key back as the response
       res.status(200).send({ apikey: tykAPIKey });
+    } else if (apimProvider === 'CUSTOM) {
+      var customAPIKey = createAPIKeyForCustomerForCustomApiGateway();
+      res.status(200).send({ apikey: customAPIKey });
     }
+
   } catch (error) {
     console.error("Error creating key:", error);
     res.status(500).json({ message: "Failed to create key" });
