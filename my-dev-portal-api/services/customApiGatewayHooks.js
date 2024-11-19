@@ -7,7 +7,7 @@ function provisionCustomerForCustomApiGateway() {
 
 function createAPIKeyForCustomerForCustomApiGateway() {
   // for you to finish to genreate key.
-  return 'GENERATEYOUR_KEY';
+  return 'GENERATEYOUR_KEY using createAPIKeyForCustomerForCustomApiGateway';
 }
 
 
